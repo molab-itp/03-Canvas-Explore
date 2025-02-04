@@ -42,13 +42,13 @@ struct CanvasAnimView: View {
           // must read to trigger update
           _ = timeline.date
         }
-        ButtonVarView();
+        ButtonBarView();
       }
     }
   }
 }
 
-struct ButtonVarView: View {
+struct ButtonBarView: View {
   var body: some View {
     HStack {
       Button("Left") {
