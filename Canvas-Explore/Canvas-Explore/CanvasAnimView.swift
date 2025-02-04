@@ -34,22 +34,8 @@ struct CanvasAnimView: View {
         //      print("size", size)
         nsize = CGSize(width: size.width/ncell, height: size.width/ncell)
                 
-        let path = randomSlash(loc);
-        let color = colorSpecs.randomElement() ?? .black
-        paths.append(PathData(path: path, color: color));
-        for p in paths {
-          let style = StrokeStyle(lineWidth: lineWidth, lineCap: .round);
-          context.stroke(p.path, with: .color(p.color), style: style)
-        }
-        loc.x += nsize.width;
-        if loc.x > size.width {
-          loc.x = 0;
-          loc.y += nsize.height;
-          if loc.y > size.height {
-            loc.y = 0
-            paths = [];
-          }
-        }
+        randomLines(context, size)
+        
         // must read to trigger update
         _ = timeline.date
       }

@@ -12,7 +12,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		ABEE3A3E2D4651DE007E8632 /* Canvas-Explore */ = {
+		ABC567B52D527D59002A5781 /* Canvas-Explore */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Canvas-Explore";
 			sourceTree = "<group>";
@@ -34,7 +34,7 @@
 			isa = PBXGroup;
 			children = (
 				ABEE3A562D465226007E8632 /* README.md */,
-				ABEE3A3E2D4651DE007E8632 /* Canvas-Explore */,
+				ABC567B52D527D59002A5781 /* Canvas-Explore */,
 				ABEE3A3D2D4651DE007E8632 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,7 +63,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				ABEE3A3E2D4651DE007E8632 /* Canvas-Explore */,
+				ABC567B52D527D59002A5781 /* Canvas-Explore */,
 			);
 			name = "Canvas-Explore";
 			packageProductDependencies = (
