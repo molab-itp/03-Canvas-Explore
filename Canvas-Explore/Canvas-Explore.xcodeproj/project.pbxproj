@@ -6,18 +6,29 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AB5A7E0D2D5224F8000FB16B /* Canvas_ExploreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A7E062D5224F8000FB16B /* Canvas_ExploreApp.swift */; };
+		AB5A7E0E2D5224F8000FB16B /* CanvasAnimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A7E072D5224F8000FB16B /* CanvasAnimView.swift */; };
+		AB5A7E0F2D5224F8000FB16B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A7E082D5224F8000FB16B /* ContentView.swift */; };
+		AB5A7E102D5224F8000FB16B /* nextSlash.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A7E092D5224F8000FB16B /* nextSlash.swift */; };
+		AB5A7E112D5224F8000FB16B /* randomSlash.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A7E0A2D5224F8000FB16B /* randomSlash.swift */; };
+		AB5A7E132D5224F8000FB16B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB5A7E032D5224F8000FB16B /* Preview Assets.xcassets */; };
+		AB5A7E142D5224F8000FB16B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB5A7E052D5224F8000FB16B /* Assets.xcassets */; };
+		AB5A7E162D522594000FB16B /* nextBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A7E152D522594000FB16B /* nextBar.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		AB5A7E032D5224F8000FB16B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AB5A7E052D5224F8000FB16B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB5A7E062D5224F8000FB16B /* Canvas_ExploreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas_ExploreApp.swift; sourceTree = "<group>"; };
+		AB5A7E072D5224F8000FB16B /* CanvasAnimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasAnimView.swift; sourceTree = "<group>"; };
+		AB5A7E082D5224F8000FB16B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB5A7E092D5224F8000FB16B /* nextSlash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nextSlash.swift; sourceTree = "<group>"; };
+		AB5A7E0A2D5224F8000FB16B /* randomSlash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomSlash.swift; sourceTree = "<group>"; };
+		AB5A7E152D522594000FB16B /* nextBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nextBar.swift; sourceTree = "<group>"; };
 		ABEE3A3C2D4651DE007E8632 /* Canvas-Explore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Canvas-Explore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABEE3A562D465226007E8632 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		ABEE3A3E2D4651DE007E8632 /* Canvas-Explore */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Canvas-Explore";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		ABEE3A392D4651DE007E8632 /* Frameworks */ = {
@@ -30,11 +41,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB5A7E042D5224F8000FB16B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AB5A7E032D5224F8000FB16B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AB5A7E0C2D5224F8000FB16B /* Canvas-Explore */ = {
+			isa = PBXGroup;
+			children = (
+				AB5A7E062D5224F8000FB16B /* Canvas_ExploreApp.swift */,
+				AB5A7E072D5224F8000FB16B /* CanvasAnimView.swift */,
+				AB5A7E092D5224F8000FB16B /* nextSlash.swift */,
+				AB5A7E152D522594000FB16B /* nextBar.swift */,
+				AB5A7E0A2D5224F8000FB16B /* randomSlash.swift */,
+				AB5A7E082D5224F8000FB16B /* ContentView.swift */,
+				AB5A7E042D5224F8000FB16B /* Preview Content */,
+				AB5A7E052D5224F8000FB16B /* Assets.xcassets */,
+			);
+			path = "Canvas-Explore";
+			sourceTree = "<group>";
+		};
 		ABEE3A332D4651DE007E8632 = {
 			isa = PBXGroup;
 			children = (
 				ABEE3A562D465226007E8632 /* README.md */,
-				ABEE3A3E2D4651DE007E8632 /* Canvas-Explore */,
+				AB5A7E0C2D5224F8000FB16B /* Canvas-Explore */,
 				ABEE3A3D2D4651DE007E8632 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,9 +95,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				ABEE3A3E2D4651DE007E8632 /* Canvas-Explore */,
 			);
 			name = "Canvas-Explore";
 			packageProductDependencies = (
@@ -111,6 +142,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5A7E132D5224F8000FB16B /* Preview Assets.xcassets in Resources */,
+				AB5A7E142D5224F8000FB16B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5A7E0D2D5224F8000FB16B /* Canvas_ExploreApp.swift in Sources */,
+				AB5A7E0E2D5224F8000FB16B /* CanvasAnimView.swift in Sources */,
+				AB5A7E0F2D5224F8000FB16B /* ContentView.swift in Sources */,
+				AB5A7E102D5224F8000FB16B /* nextSlash.swift in Sources */,
+				AB5A7E112D5224F8000FB16B /* randomSlash.swift in Sources */,
+				AB5A7E162D522594000FB16B /* nextBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
