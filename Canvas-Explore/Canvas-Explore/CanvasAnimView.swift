@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+// Swift implmentation of 10Print algorithm
+// spiced up with a little color
+
+// See UIGraphicsImageRenderer version:
+// https://github.com/molab-itp/01-UIRender-playground / 10print save
+
 let animInterval = 0.10; // update very tenth of a second
 let ncell = 10.0
 let lineWidth = 10.0
