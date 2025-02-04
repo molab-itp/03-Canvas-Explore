@@ -46,8 +46,6 @@ struct ContentView: View {
       context.stroke(path, with: .color(.yellow), lineWidth: lineWidth)
 
     }
-//    .frame(width: 300, height: 200)
-//    .border(Color.blue)
   }
 }
 
