@@ -31,16 +31,21 @@ struct CanvasAnimView: View {
   var body: some View {
     TimelineView(.animation(minimumInterval: animInterval)) { timeline in
       Canvas { context, size in
-        //      print("size", size)
+        // print("size", size)
         nsize = CGSize(width: size.width/ncell, height: size.width/ncell)
-                
+          
+        // Add a path and random color to paths array
         let path = randomSlash(loc);
-        let color = colorSpecs.randomElement() ?? .black
+        let color = colorSpecs.randomElement()!
         paths.append(PathData(path: path, color: color));
+        
+        // Draw all the paths in paths array
         for p in paths {
           let style = StrokeStyle(lineWidth: lineWidth, lineCap: .round);
           context.stroke(p.path, with: .color(p.color), style: style)
         }
+        
+        // Advance to next location
         loc.x += nsize.width;
         if loc.x > size.width {
           loc.x = 0;
@@ -57,6 +62,7 @@ struct CanvasAnimView: View {
   }
 }
 
+// Draw a diagonal line in random direction
 func randomSlash(_ p: CGPoint) -> Path {
   var path = Path()
   let x = loc.x;
