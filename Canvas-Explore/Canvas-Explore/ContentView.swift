@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// Exploring drawing shapes with Canvas
+
 struct ContentView: View {
   var body: some View {
     Canvas { context, size in
