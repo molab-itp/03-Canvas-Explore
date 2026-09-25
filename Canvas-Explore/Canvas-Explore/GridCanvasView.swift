@@ -7,25 +7,35 @@
 
 import SwiftUI
 
+@Observable
+class AppModel {
+  var count: Int = 0
+}
+
 struct GridCanvasView: View {
   var body: some View {
-    @State var count: Int = 0
+    @State var appModel = AppModel();
     HStack {
       Button("Next") {
         // Action
       }
-      Text("count \(count)")
+      Text("count \(appModel.count)")
     }
     Canvas { context, size in
 //      print("size", size)
       let lineWidth = 1.0
       let cell = 10.0
-      count = drawGrid(context: context,
+      let count = drawGrid(context: context,
                        size: size,
                        lineWidth: lineWidth,
                        cell: cell)
       // setting @State count in Canvas fails
-      print("count", count)
+      print("bcount", count)
+      Task {
+        appModel.count = count;
+        print("Task count", count)
+        print("Task appModel.count", appModel.count)
+      }
     }
   }
 }
