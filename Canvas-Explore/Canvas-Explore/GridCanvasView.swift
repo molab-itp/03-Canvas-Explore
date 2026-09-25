@@ -24,6 +24,7 @@ struct GridCanvasView: View {
                        size: size,
                        lineWidth: lineWidth,
                        cell: cell)
+      // setting @State count in Canvas fails
       print("count", count)
     }
   }
