@@ -13,16 +13,12 @@ class AppModel {
 }
 
 struct GridCanvasView: View {
-  @State var appModel = AppModel();
   @State var countUI: Int = 0
   var body: some View {
     VStack {
       HStack {
-        Button("Action") {
-          // Action
-          print("Action appModel.count", appModel.count)
-          countUI = appModel.count
-//          countUI += 1
+        Button("Action 1") {
+          countUI += 1
           print("Action countUI", countUI)
         }
         Text("countUI \(countUI)")
@@ -35,23 +31,20 @@ struct GridCanvasView: View {
                              size: size,
                              lineWidth: lineWidth,
                              cell: cell)
-        // setting @State count in Canvas fails
         print("Canvas count", count)
-        //      Task {
-        print("Task before appModel.count", appModel.count)
-        print("Task before count", count)
-        print("Task before countUI", countUI)
-//        if appModel.count != count {
-          appModel.count = count
-//        }
-        //        print("Task count", count)
-        print("Task appModel.count", appModel.count)
-        //      }
+        countUI = count
+        // does not change
+        print("Canvas after countUI", countUI)
+        Task {
+          // must defer setting with Task
+          print("Task before countUI", countUI)
+          countUI = count
+          print("Task after countUI", countUI)
+        }
       }
     }
     .onAppear {
-      print("onAppear a appModel.count", appModel.count)
-      countUI = appModel.count
+      print("onAppear a countUI", countUI)
     }
   }
 }
