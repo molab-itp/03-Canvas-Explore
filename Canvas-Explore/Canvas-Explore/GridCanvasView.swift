@@ -7,17 +7,12 @@
 
 import SwiftUI
 
-@Observable
-class AppModel {
-  @ObservationIgnored var count: Int = 0
-}
-
 struct GridCanvasView: View {
   @State var countUI: Int = 0
   var body: some View {
     VStack {
       HStack {
-        Button("Action 1") {
+        Button("Action ") {
           countUI += 1
           print("Action countUI", countUI)
         }
@@ -31,20 +26,14 @@ struct GridCanvasView: View {
                              size: size,
                              lineWidth: lineWidth,
                              cell: cell)
-        print("Canvas count", count)
-        countUI = count
-        // does not change
-        print("Canvas after countUI", countUI)
         Task {
           // must defer setting with Task
-          print("Task before countUI", countUI)
           countUI = count
-          print("Task after countUI", countUI)
         }
       }
     }
     .onAppear {
-      print("onAppear a countUI", countUI)
+      print("onAppear countUI", countUI)
     }
   }
 }
@@ -78,7 +67,8 @@ func drawGrid(context :GraphicsContext,
     ny += 1
   }
   let count = nx * ny;
-  print("drawGrida nx", nx, "ny", ny, "count", count)
+//  print("drawGrida nx", nx, "ny", ny, "count", count)
+  print("drawGrid count", count)
   x = (Double(nx) / 2.0).rounded(.up) * cell // 4.0 * cell
   y = (Double(ny) / 2.0).rounded(.up) * cell // 4.0 * cell
   // Solid circle
