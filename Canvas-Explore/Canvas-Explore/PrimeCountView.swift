@@ -80,9 +80,8 @@ func drawGridCountPrimes(
     var primes: [Int] = []
     let start = Int(startNum)
     let stop = start+cellCount
-    for num in start..<start+cellCount {
+    for num in start..<stop {
       if isPrime(num) {
-        //        print("prime ", num)
         primes.append(num)
         primeCount += 1
         let num0 = num - start - 1
@@ -91,10 +90,10 @@ func drawGridCountPrimes(
         x += xmargin
         y += ymargin
         
-        let rt = CGRect(x: x, y:y-lineWidth/2,
-                        width:cellWidth, height:cellWidth)
-        let ellipsePath = Path(ellipseIn: rt)
-        context.fill(ellipsePath, with: .color(.black) )
+        let rect = CGRect(x: x, y: y-lineWidth/2,
+                          width:cellWidth, height:cellWidth)
+        let dotPath = Path(ellipseIn: rect)
+        context.fill(dotPath, with: .color(.black) )
       }
     }
     //    print("primes", primes)
@@ -107,11 +106,7 @@ func isPrime(_ num:Int) -> Bool {
     return false
   }
   // Don't need to check all numbers
-  //  let numStop = Int(Double(num).squareRoot());
-  //  if numStop < 2 {
-  //    return true
-  //  }
-  let numStop = num
+  let numStop = Int(Double(num).squareRoot())+1
   for i in 2..<numStop {
     if num % i == 0 {
       return false
@@ -130,13 +125,13 @@ func drawGrid(
     // grid columns
     var x = 0.0
     var nx = 0
-    let height:Double = Double( Int(size.height) / Int(cellWidth) ) * cellWidth
-    let width:Double = Double( Int(size.width) / Int(cellWidth) ) * cellWidth
+    let height:Double = Double(Int(size.height)/Int(cellWidth)) * cellWidth
+    let width:Double = Double(Int(size.width)/Int(cellWidth)) * cellWidth
     let xmargin = (size.width - width) / 2.0
     let ymargin = (size.height - height) / 2.0
     
-    var context2 = context
-    context2.translateBy(x: xmargin, y: ymargin)
+//    var context2 = context
+//    context2.translateBy(x: xmargin, y: ymargin)
     
     while x <= width {
       var path = Path()
