@@ -11,7 +11,7 @@ import SwiftUI
 struct PrimeDisplay {
   let numInterval = 1000.0;
   let lineWidth = 1.0
-  let cellWidth = 20.0
+  let cellWidth = 40.0
 }
 let primeDisplay = PrimeDisplay();
 
@@ -24,7 +24,7 @@ struct PrimeCountView: View {
   
   var body: some View {
     VStack {
-      Text("Base: \(Int(startNum))")
+      Text("Start: \(Int(startNum))")
       HStack {
         Button("+Step") {
           startNum += primeDisplay.numInterval
