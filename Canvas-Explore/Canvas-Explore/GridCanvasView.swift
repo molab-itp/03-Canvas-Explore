@@ -9,37 +9,55 @@ import SwiftUI
 
 @Observable
 class AppModel {
-  var count: Int = 0
+  @ObservationIgnored var count: Int = 0
 }
 
 struct GridCanvasView: View {
+  @State var appModel = AppModel();
+  @State var countUI: Int = 0
   var body: some View {
-    @State var appModel = AppModel();
-    HStack {
-      Button("Next") {
-        // Action
+    VStack {
+      HStack {
+        Button("Action") {
+          // Action
+          print("Action appModel.count", appModel.count)
+          countUI = appModel.count
+//          countUI += 1
+          print("Action countUI", countUI)
+        }
+        Text("countUI \(countUI)")
       }
-      Text("count \(appModel.count)")
-    }
-    Canvas { context, size in
-//      print("size", size)
-      let lineWidth = 1.0
-      let cell = 10.0
-      let count = drawGrid(context: context,
-                       size: size,
-                       lineWidth: lineWidth,
-                       cell: cell)
-      // setting @State count in Canvas fails
-      print("bcount", count)
-      Task {
-        appModel.count = count;
-        print("Task count", count)
+      Canvas { context, size in
+        //      print("size", size)
+        let lineWidth = 1.0
+        let cell = 10.0
+        let count = drawGrid(context: context,
+                             size: size,
+                             lineWidth: lineWidth,
+                             cell: cell)
+        // setting @State count in Canvas fails
+        print("Canvas count", count)
+        //      Task {
+        print("Task before appModel.count", appModel.count)
+        print("Task before count", count)
+        print("Task before countUI", countUI)
+//        if appModel.count != count {
+          appModel.count = count
+//        }
+        //        print("Task count", count)
         print("Task appModel.count", appModel.count)
+        //      }
       }
+    }
+    .onAppear {
+      print("onAppear a appModel.count", appModel.count)
+      countUI = appModel.count
     }
   }
 }
 
+// count depends on size
+//
 func drawGrid(context :GraphicsContext,
               size :CGSize,
               lineWidth: CGFloat,
