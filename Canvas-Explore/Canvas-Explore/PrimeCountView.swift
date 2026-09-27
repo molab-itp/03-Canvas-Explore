@@ -41,7 +41,7 @@ struct PrimeCountView: View {
         Text("nprimes:\(primeCount)")
         if cellCount != 0 {
           let density = Double(primeCount)/Double(cellCount);
-          Text(String(format: "%.2f", density))
+          Text(String(format: "density: %.2f", density))
         }
       }
       Canvas { context, size in

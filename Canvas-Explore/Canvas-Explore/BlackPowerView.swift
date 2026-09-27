@@ -25,7 +25,9 @@ struct BlackPowerCanvasView: View {
   var startingAngle: CGFloat
   var body: some View {
     Canvas { context, size in
-      drawBlackPower(context: context, size: size, startingAngle: startingAngle)
+      drawBlackPower(context: context,
+                     size: size,
+                     startingAngle: startingAngle)
     }
   }
 }
